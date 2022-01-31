@@ -1,7 +1,8 @@
 import { RequestHandler } from 'express';
+import { ObjectId } from 'mongodb';
 import { client } from '../db';
 
-const patchName: RequestHandler = async (req, res) => {
+const updateOne: RequestHandler = async (req, res) => {
   try {
     await client.connect();
 
@@ -10,7 +11,7 @@ const patchName: RequestHandler = async (req, res) => {
 
     const { body, params } = req;
     const result = await users.updateOne(
-      { _id: params.id },
+      { _id: new ObjectId(params.id) },
       { $set: { name: body.name } }
     );
 
@@ -22,4 +23,4 @@ const patchName: RequestHandler = async (req, res) => {
   }
 };
 
-export default patchName;
+export default updateOne;

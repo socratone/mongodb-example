@@ -15,3 +15,9 @@ npm run init
 ```
 npm run dev
 ```
+
+### react app 실행
+
+```
+npm start
+```
