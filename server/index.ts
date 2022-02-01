@@ -1,11 +1,11 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import find from './drivers/find';
-import findOne from './drivers/findOne';
-import insertOne from './drivers/insertOne';
-import updateOne from './drivers/updateOne';
-import deleteOne from './drivers/deleteOne';
+import find from './crud/find';
+import findOne from './crud/findOne';
+import insertOne from './crud/insertOne';
+import updateOne from './crud/updateOne';
+import deleteOne from './crud/deleteOne';
 
 const app = express();
 app.use(cors());
